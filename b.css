@@ -111,8 +111,8 @@ hr {
 }
 
 .mycard {
-    border: 1px solid red;
-    max-width       : 940px;      
+    border          : 1px solid red;
+    max-width       : 940px;
     margin-left     : auto;
     margin-right    : auto;
     background-color: #FFFFFF;
@@ -184,4 +184,27 @@ hr {
     color: #9da0a7;
 }
 
-
+.mycard>footer.media {
+    background    : #e6686a;
+    text-align    : center;
+    
+    
+}
+.mycard>footer.media>a{
+    display: inline-block;
+    width: 40px;
+    line-height: 30px;
+    padding: 5px 0;
+    border-radius: 50%;
+    margin: 16px
+}
+.mycard>footer.media>a:hover{
+    background: #cf5d5f;
+}
+.mycard svg{
+    width: 30px;
+    height: 30px;
+    fill: white;
+   
+    vertical-align: top;
+}
