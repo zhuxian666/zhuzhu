@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>键盘导航小工具</title>
+    <link rel="stylesheet" href="jianpan1.css">
+</head>
+
+<body>
+    <header></header>
+    <main>
+        <div id='jianpan' class="jianpandiv"></div>
+
+    </main>
+    <footer></footer>
+    <script>
+        var keys = {
+            '0': ['q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p'],
+            '1': ['a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l'],
+            '2': ['z', 'x', 'c', 'v', 'b', 'n', 'm']
+        }
+        var keyweb = {
+            'q': 'qzone.qq.com', 'w': 'weibo.com', 'e': 'hao123.com',
+            'r': 'egame.qq.com', 't': 'zhipin.com', 'y': 'y.qq.com',
+            'u': 'huya.com', 'i': 'iqiyi.com', 'o': '163.com',
+            'p': 'douyu.com', 'a': 'ac.qq.com', 's': 'suning.com',
+            'd': 'baidu.com', 'f': 'mgtv.com', 'g': 'taobao.com', 'h': 'hupu.com', 'j': 'alipay.com',
+            'k': 'kuwo.cn', 'l': 'landing.zhaopin.com', 'z': 'zhihu.com', 'x': 'ximalaya.com',
+            'c': 'aliyun.com', 'v': '58.com', 'b': 'bilibili.com',
+            'n': 'xiecheng.com', 'm': 'meituan.com'
+        }
+        var hashInLocalStorge =
+            JSON.parse(localStorage.getItem('keyweb') || 'null')
+        if (hashInLocalStorge) {
+            var keyweb = hashInLocalStorge
+        }
+        var index1 = 0;
+        while (index1 < 3) {
+            var div = document.createElement('div')
+            div.className = 'rowdiv'
+            jianpan.appendChild(div)
+            var rowdiv = keys[index1]
+            var index2 = 0
+            while (index2 < rowdiv.length) {
+                var kbd = document.createElement('kbd')
+                kbd.className = 'key'
+
+                kbd.textContent = rowdiv[index2]
+                var button = document.createElement('button')
+                button.id = rowdiv[index2]
+                button.textContent = '编辑'
+                var img = document.createElement('img')
+
+                if (keyweb[rowdiv[index2]]) {
+                    img.src = 'http://' + keyweb[rowdiv[index2]] + '/favicon.ico'
+                } else {
+                    img.src = 'file:///E:/0study/zhuzhu/sandao.jpg'
+                }
+                img.onerror = function (xxx) {
+                    xxx.target.src = 'file:///E:/0study/zhuzhu/sandao.jpg'
+                }
+                button.onclick = function (jkl1) {
+                    var button = jkl1['target']
+                    var img = button.previousSibling
+                    var key = button['id']
+                    if (hashInLocalStorge) {
+                        var x = prompt('给我一个网址', hashInLocalStorge[key])
+                    }else
+                    var x = prompt('给我一个网址')
+                    keyweb[key] = x
+                    img.src = 'http://' + x + '/favicon.ico'
+                    img.onerror = function (xxx) {
+                        xxx.target.src = 'file:///E:/0study/zhuzhu/sandao.jpg'
+                    }
+                    localStorage.setItem('keyweb', JSON.stringify(keyweb))
+                }
+                div.appendChild(kbd)
+                kbd.appendChild(img)
+                kbd.appendChild(button)
+
+                index2 = index2 + 1
+            }
+            index1 = index1 + 1
+        }
+        document.onkeypress = function (jkl) {
+            var key = jkl['key']
+            var website = keyweb[key]
+            // location.href = 'http://' + website
+            window.open('http://' + website, '_blank')
+        }
+
+
+
+
+    </script>
+
+</body>
+
+</html>
