@@ -17,6 +17,10 @@
 3. 333
 4. 444
 
+这里是[我的网站](http://qq.com)
+
+[我的头像](/cf.jpg)
+![头像](/cf.jpg)
 ```javascript
   function hi(){
     console.log('hi')
