@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatidle" contenteditable="ie=edge">
+    <title>HTML入门笔记1</title>
+    <style>
+        body {
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+
+        img {
+            width: 800px;
+            height: 500px;
+        }
+
+        hr {
+            border: 1px solid;
+        }
+        p,dt{
+            color: rgb(207, 31, 31);
+        }
+    </style>
+</head>
+
+<body>
+    <h1>HTML入门笔记1</h1>
+    <dl>
+        <dt>HTML是由谁发明的？</dt>
+        <dd>Tim Berners-Lee(李爵士)在1991年发明了www（World Wide Web）</dd>
+        
+    </dl>
+    <hr>
+   <p> HTML常用的表章节的标签有哪些，分别是什么意思？</p><br>
+    <ol>
+        <li>h1~h6:标题标签，h1最大h6最小</li>
+        <li>section:章节标签，可以有多个章节标签，章节标签里也可以嵌套章节标签，一个章节标签表示一块要写的内容</li>
+        <li>article:文章标签</li>
+        <li>p:段落标签</li>
+        <li>header:表示头部，在body的头部</li>
+        <li>footer:脚部，在body的底部</li>
+        <li>main:主要内容，可以把想要表达的主要内容写在这个标签里</li>
+        <li>aside:旁支内容</li>
+        <li>div:div标签</li>
+    </ol><br>
+    <hr>
+    <p>全局属性有哪些？</p><br>
+    <ul>
+        <li>class:不唯一</li>
+        <li>contenteditable:可编辑的</li>
+        <li>hidden:在元素上加上他直接隐藏，可以用display:block;取消隐藏</li>
+        <li>id:全页面唯一(不到万不得已不要用)</li>
+        <li>style:一个标签的样式</li>
+        <li>tabindex:TAB键可以选择内容，它是通过给要选择的内容加上tabindex属性实现的<br>
+        值为自然数，tabindex=1时表示按一下TAB来到这里，特殊值"0"为最后一个访问，"-1"：永远不会访问到我</li>
+        <li>title:鼠标浮上去会显示""里的内容</li>
+        <li>注：diplay:none;也会使元素隐藏</li>
+    </ul><br>
+    <hr><br>
+    <dl>
+        <dt>怎么把style变成显示出来的元素呢？</dt>
+        <dd>把style放在body里再给style标签加上isplay:block;就显示了，再给他加上contenteditable就可以在页面上编辑样式了</dd>
+        
+    </dl><br>
+    <hr><br>
+    <dl>
+        <dt>HTML的起手式改写一些什么？</dt><br><br><br><br>
+        <dd><img src="qishoushi.png" alt="图片不在"></dd>
+        
+    </dl>
+    
+    <hr>
+    <p>常用的内容标签有哪些，分别是什么意思？</p>
+    <ul>
+        <li>ol+li:有序列表，前面有12345</li>
+        <li>ul+li:无序列表，前面小圆点</li>
+        <li>dl+dt+dd:描述列表，dl描述，dt描述对象，dd描述内容</li>
+        <li>pre:保留HTML里原有的内容格式</li>
+        <li>hr:分割线</li>
+        <li>br:换行</li>
+        <li>a:链接</li>
+        <li>em:会加粗，表示语气强调</li>
+        <li>strong:会加粗，表示内容重要</li>
+        <li>code:这里的内容同等宽度</li>
+        <li>q:引述</li>
+        <li>blockquote:换行引述</li>
+    
+    </ul>
+    <br><br><br><br>
+</body>
+
+</html>
