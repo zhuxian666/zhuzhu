@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML笔记2</title>
+    <style>
+        hr {
+            border: 1px solid;
+        }
+
+        p,
+        dt {
+            color: rgb(207, 31, 31);
+        }
+    </style>
+
+</head>
+
+<body>
+    <h1>HTML常用标签</h1>
+    <H3>a标签</H3>
+    <p>属性：</p>
+    <ol>
+        <li>href:这里写地址</li><br>
+        <li>target:这里写怎么跳转 <br><br> "_blank"(新开一个页面跳转)
+            <br> "_top"(在顶级页面跳转)<br>"_self"(在自己这跳转)
+            <br>"_parent"(在自己上一级跳转)
+        </li><br>
+        <li>download:加上这个就能下载了</li><br>
+        <li>target"xxx":在xxx这个窗口打开，没有就新创建一个xxx窗口再打开</li><br>
+    </ol>
+    <p>作用：</p>
+    <ol>
+        <li>可以跳转外部页面<br>href="baidu.com"(点我去百度)</li>
+        <li>跳转内部锚点<br>href="#xxx"(去本页id=xxx的地方)</li>
+        <li>跳转邮箱<br>href="mailto:123@qq.com"(发邮件给123)</li>
+        <li>跳转电话<br>href="tel:12333334444"(打电话给123)</li>
+    </ol><br>
+<hr>
+    <p>特殊的需求:我要一个点了之后什么也做的东西</p>
+
+    <ul>
+        <li>href="" (刷新当前页面)</li>
+        <li>href="#" (不刷新返回页面顶部)</li>
+        <li>href="javascript:;" (真什么也不会做，特殊的需求解决了)</li>
+    </ul>
+    <hr>
+
+    <h3>table标签</h3>
+    <p>相关的标签</p>
+    <ul>
+        <li>table:表格标签</li>
+        <li>thead:表头标签</li>
+        <li>tbody:表的身体</li>
+        <li>tfoot:表的底部</li>
+        <li>tr:行，表行</li>
+        <li>td:表体</li>
+        <li>th:表头，会加粗</li>
+    </ul>
+
+
+    <dl>
+        <dt>table的相邻有空隙</dt>
+        <dd>加上边框border:1px solid red;</dd>
+        <dd>让中间没有空隙border-collapse:collapse;(合并，默认不合并)</dd>
+        <dd> border和border之间的距离border-spacing:0;</dd>
+
+    </dl><hr>
+    <h3>img标签</h3>
+    <dl>
+        <dt>作用</dt>
+        <dd>会发送一个get请求，展示一张图片</dd>
+
+
+    </dl>
+    <dl>
+        <dt>属性</dt>
+        <dd>alt:加载失败时显示的文字</dd>
+        <dd>width:写宽度高度自适应</dd>
+        <dd>heigth:写高度宽度自适应</dd>
+        <dd>src:图片源</dd>
+        <dd>注:宽度高度都写会变形(不建议都写)永远都不要让图片变形！</dd>
+    </dl><hr>
+    <h3>from标签</h3>
+    <dl>
+        <dt>作用</dt>
+        <dd>会发送一个请求，然后刷新页面</dd>
+    </dl>
+    <dl>
+        <dt>属性</dt>
+        <dd>action: action="/123" 后面加请求的地址写baidu.com或xxx.com就会发请求去百度或xxx，
+            <br>写123或xxx页面就会变成123或xxx</dd>
+        <dd>autocomplete:在form上加一个autocomplete="on"会在输入框给我们一些建议</dd>
+        <dd>method:"get" "post" 请求方式</dd>
+        <dd>target: target="a"(我要提交给a) </dd>
+    </dl><hr>
+    <h3>input标签</h3>
+    <dl>
+        <dt>作用</dt>
+        <dd>让用户输入内容，在form标签里会把输入的内容提交</dd>
+    </dl>
+    <p>属性</p>
+    <ul>
+        <li>type="chackbox"&nbsp;&nbsp;&nbsp;&nbsp;复选框  给他们同一个name</li>
+        <li>type="button" &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 一个按钮</li>
+        <li>type="text" &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;文本框</li>
+        <li>type="password"&nbsp;&nbsp;&nbsp;  密码框  都是小圆点</li>
+        <li>type="color"  &nbsp;&nbsp;&nbsp;&nbsp;可以选颜色</li>
+        <li>type="submit"  &nbsp;&nbsp;&nbsp;&nbsp;提交按钮  不写值也会自动显示一个提交</li>
+        <li>type="file"&nbsp;&nbsp; &nbsp;&nbsp; 可以选择文件上传，但是只能传一个，加一个multiple就能多个选多个文件了</li>
+        <li>type="radio"  &nbsp;&nbsp;&nbsp;&nbsp;单选框，name值一样的只能选一个</li>
+        <li>type="hidden"  &nbsp;&nbsp;&nbsp;&nbsp;隐形的，你看不见我，但是我的数据该提交还是提交</li>
+        <li>textarea &nbsp;&nbsp;&nbsp;&nbsp; 右下角可以拖拽大小不固定，"resize:none; width:50%; hightyoxia:50%;"三连一下就好了，固定了</li>
+        <li>select &nbsp;&nbsp;&nbsp;&nbsp;下拉列表  option value="1" option标签写在select里面写几个下拉列表有几个  </li>
+        <li>required: &nbsp;&nbsp;&nbsp;&nbsp;有了我你必须写点东西，不写不让提交哦</li>
+    </ul>
+    
+</body>
+
+</html>
