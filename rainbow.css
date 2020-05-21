@@ -1,0 +1,70 @@
+* {
+    margin : 0;
+    padding: 0;
+}
+
+.rainbow {
+    height  : 350px;
+    overflow: hidden;
+}
+
+div {
+    overflow: hidden;
+}
+
+.a {
+    width        : 700px;
+    height       : 700px;
+    background   : red;
+    border-radius: 50%;
+
+}
+
+.b {
+    margin       : 10px;
+    height       : 680px;
+    background   : rgb(255, 170, 42);
+    border-radius: 50%;
+}
+
+.c {
+    margin       : 10px;
+    height       : 660px;
+    background   : rgb(255, 230, 0);
+    border-radius: 50%;
+}
+
+.d {
+    margin       : 10px;
+    height       : 640px;
+    background   : rgb(19, 179, 53);
+    border-radius: 50%;
+}
+
+.e {
+    margin       : 10px;
+    height       : 620px;
+    background   : rgb(11, 129, 224);
+    border-radius: 50%;
+}
+
+.f {
+    margin       : 10px;
+    height       : 600px;
+    background   : rgb(101, 12, 202);
+    border-radius: 50%;
+}
+
+.g {
+    margin       : 10px;
+    height       : 580px;
+    background   : rgb(223, 24, 179);
+    border-radius: 50%;
+}
+
+.h {
+    margin       : 10px;
+    height       : 560px;
+    background   : rgb(255, 255, 255);
+    border-radius: 50%;
+}
