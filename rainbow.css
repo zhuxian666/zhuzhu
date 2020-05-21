@@ -4,12 +4,15 @@
 }
 
 .rainbow {
+  
     height  : 350px;
     overflow: hidden;
 }
 
 div {
     overflow: hidden;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .a {
