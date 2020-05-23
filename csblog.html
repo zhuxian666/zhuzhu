@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS 知识总结</title>
+    <link rel="stylesheet" href="cssblog.css">
+</head>
+<body>
+    <div class="p">
+        <h3 id="5">CSS的渲染原理</h3>
+        <p> 浏览器得到一个html页面浏览器开始构建HTML树(DOM TREE),遇到CSS样式会构建CS树(CSS RULE TREE) ,
+            然后两束合并成渲染树（render tree）
+            最后，渲染树构建完成后会经过三个步骤：
+            Layout（布局）文档流、盒模型、计算大小和位置，Paint（绘制）把边框的颜色、文字的颜色、阴影等画出来，
+            Compose（合成）根据层叠关系展示画面。</p>
+    </div>
+    <div class="p">
+        <h3 id="5">CSS动画的两种做法</h3>
+        <p> 第一种：两次transform
+            
+        </p>
+        <div id="e">
+
+        </div>
+        <button id="r">动</button>
+        <p>第二种：css动画animation</p>
+        <div id="h"></div>
+        <button id="y">动</button>
+    </div>
+    <script>
+     r.onclick= ()=>{
+     e.classList.add('b')
+     setTimeout(() => {
+         e.classList.remove('b')
+         e.classList.add('c')
+     },1000  )
+     }
+     y.onclick= ()=>{
+     h.classList.add('k')
+     }
+    </script>
+</body>
+</html>

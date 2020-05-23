@@ -1,0 +1,27 @@
+#e,#h{
+     border: 1px solid red;
+     width: 100px;
+     height: 100px;
+     transition: all 1s;
+}
+#e.b{
+    transform: translateX(100px) ;
+   
+}
+#e.c{transform: translateX(100px) translateY(200px);
+
+}
+#h.k{
+    animation: xx 1.5s forwards;
+}
+@keyframes xx{
+0%{
+    transform: none;
+}
+50%{
+    transform: translateX(200px);
+}
+100%{
+    transform: translateX(200px) translateY(100px);
+}
+}
