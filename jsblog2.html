@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS 对象基本用法</title>
+
+
+<pre>
+    内容1：声明对象的两种语法
+
+    let obj = { 'name': 'frank', 'age': 18 }
+    let obj = new Object({'name': 'frank'})
+    console.log({ 'name': 'frank, 'age':18 })
+
+    内容2：如何删除对象的属性
+    delete obj.xxx 或 delete obj['xxx']
+
+    内容3：如何查看对象的属性
+    查看自身所有属性   Object.keys(obj)
+    查看自身+共有属性  console.dir(obj)  
+    判断一个属性是自身的还是共有的
+    obj.hasOwnProperty('toString')  
+
+    内容4：如何修改或增加对象的属性
+    直接赋值：let obj ={name:'frank'}
+              obj.name='frank'
+              obj['na'+'me']='frank'
+              let key = 'name'; obj[key]='frank'
+
+    批量赋值：Object.assign(obj,{age:18,gender:'man'})
+    修改隐藏属性：let obj=Object.create(common)
+                 obj.name='frank'
+                 let obj2=Object.create(commen)
+                 obj2.name='jack'      
+
+    内容5：'name' in obj和obj.hasOwnProperty('name') 的区别
+            'name' in obj    是看自己和共有属性有没有name
+             obj.hasOwnProperty('name')  只是看自己有没有name（来分辨一个属性是自己的还是和别人共有的）
+</pre>
+</head>
+
+<body>
+
+</body>
+
+</html>
