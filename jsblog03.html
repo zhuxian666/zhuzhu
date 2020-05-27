@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS 函数的执行时机</title>
+</head>
+
+<body>
+    <pre>
+    1 解释为什么如下代码会打印 6 个 6
+           let i = 0
+       for(i = 0; i<6; i++){
+         setTimeout(()=>{
+           console.log(i)
+         },0)
+       }
+    setTimeout的意思是先把手头上的事先忙完了再打出i
+    所以循环执行完了之后开始打印i，这时i是6了，就只能打印出6个6
+
+    2 写出让上面代码打印 0、1、2、3、4、5 的方法
+    for和let一起使用：
+
+    for (let i = 0; i < 6; i++) {
+        setTimeout(() => {
+            console.log(i)
+        }, 0)
+    }
+    在for和let一起使用时每一次循环会创建一个i，这时i有6个就可以打印012345了
+
+</pre>
+</body>
+<script>
+    
+</script>
+
+
+</html>
