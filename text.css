@@ -1,0 +1,25 @@
+#fang{
+    border: 2px solid red;
+    width: 200px;
+    height: 200px; 
+    
+}
+
+
+#fang.start{
+animation: xxx 1s forwards ;
+}
+
+@keyframes xxx{
+0%{
+transform: none;
+}
+60%{
+    transform: translateX(100px);
+}
+100%{
+    transform: translateX(200px)
+    translateY(200px);
+}
+
+}

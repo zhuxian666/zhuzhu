@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>好玩的键盘</title>
+    <link rel="stylesheet" href="jianpan.css">
+</head>
+
+<body>
+    <header></header>
+    <main>
+        <!-- <div class="key">A</div> -->
+        <div id="xxx" class="jianpandiv"></div>
+
+
+    </main>
+    <footer></footer>
+    <script>
+        var keys = {
+            '0': ['q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p'],
+            '1': ['a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l'],
+            '2': ['z', 'x', 'c', 'v', 'b', 'n', 'm']
+        }
+        var hash = { 'q': 'qq.com', 'w': 'weibo.com' }
+        
+        var hashInLocalStorge = JSON.parse(localStorage.getItem('ccc') || 'null')
+        if (hashInLocalStorge) {
+            hash = hashInLocalStorge
+        }
+        index = 0
+        while (index < 3) {
+            divxxx = document.createElement('div')
+            divxxx.className = 'row'
+            xxx.appendChild(divxxx)
+            row = keys[index]
+            index2 = 0
+            while (index2 < row.length) {
+                kbdxxx = document.createElement('kbd')
+                spanxxx = document.createElement('sapn')
+                spanxxx.textContent = row[index2]
+                spanxxx.className = 'text'
+                kbdxxx.appendChild(spanxxx)
+                kbdxxx.className = 'key'
+                button = document.createElement('button')
+                button.textContent = '编辑'
+                button.id = row[index2]
+                imgxxx = document.createElement('img')
+                if (hash[row[index2]]) {
+                    imgxxx.src = 'http://' + hash[row[index2]] + '/favicon.ico'
+                } else {
+                    imgxxx.src = 'http://' + 'weibo.com' + '/favicon.ico'
+                }
+                imgxxx.onerror = function (xxx) {
+                    xxx.target.src = 'http://' + 'weibo.com' + '/favicon.ico'
+                }
+                button.onclick = function (jkl1) {
+                    key = jkl1['target']['id']
+                    x = prompt('给我一个网址')
+                    hash[key] = x
+                    localStorage.setItem('ccc', JSON.stringify(hash))
+
+                    console.log(hash)
+                }
+                kbdxxx.appendChild(imgxxx)
+                kbdxxx.appendChild(button)
+                divxxx.appendChild(kbdxxx)
+                index2 = index2 + 1
+            }
+            index = index + 1
+        }
+        document.onkeypress = function (jkl) {
+            // console.log('你点了'+jkl['key'])
+            key = jkl['key']
+            website = hash[key]
+            console.log(website)
+            // location.href = 'http://' + website
+            window.open('http://' + website, '_blank')
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>一起来画画</title>
+    <link rel="stylesheet" href="huaban.css">
+</head>
+
+<body>
+    <canvas id="huahua"></canvas>
+    <script>
+        var canvas = document.getElementById('huahua');
+        var context = canvas.getContext('2d');
+        
+    
+
+        context.fillStyle = 'black';
+        context.beginPath()
+        context.moveTo(500, 500);
+        context.lineTo(300, 240);
+        context.lineTo(300, 300);
+        context.fill()
+        context.beginPath()
+        context.arc(150, 150,6,0,360);
+        
+        context.fill()
+    </script>
+</body>
+
+</html>

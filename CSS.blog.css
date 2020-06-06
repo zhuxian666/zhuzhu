@@ -1,0 +1,267 @@
+body {
+    text-align: center;
+
+
+}
+
+h1 {
+    display: inline-block;
+}
+
+hr {
+    border: 1px solid;
+}
+
+body {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    color: rgb(238, 13, 13);
+}
+
+img {
+    display: inline-block;
+    width  : 100%;
+}
+
+.p {
+    max-width    : 800px;
+    margin-left  : auto;
+    margin-right : auto;
+    margin-top   : 40px;
+    margin-bottom: 40px;
+}
+
+div:first-child {
+    margin-top   : 0;
+    margin-bottom: 40px;
+
+}
+
+.a {
+    max-width : 420px;
+    text-align: start;
+
+}
+
+/* 浮动布局开始 */
+clearfix::after {
+    content: '';
+    display: block;
+    clear  : both;
+}
+*{margin:0;padding:0;box-sizing: border-box;}
+ul,ol{
+  list-style: none;
+}
+
+img{max-width: 100%;}
+header{display: block;}
+
+.clearfix:after{
+  content: '';
+  display: block;
+  clear: both;
+}
+.logo{
+  background: grey;
+  display: inline-block;
+  float: left;
+  margin-top: 8px;
+  margin-left: 10px;
+}
+.logo>img{
+  height: 26px;
+  vertical-align: middle;
+}
+.nav{
+  float: right;
+  margin-left: 20px;
+}
+ul > li {
+  float: left;
+  padding: 4px 0.5em;
+  line-height: 32px;
+}
+ul{
+  display: inline-block;
+}
+header{
+  background: grey;
+  color: white;
+}
+.content{
+  margin-top: 10px;
+}
+
+.content{
+  outline: 1px solid red;
+  width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.content>aside{
+  width: 200px;
+  height: 300px;
+  float: left;
+  background: #999;
+}
+.content> main{
+  height: 300px;
+  width: 500px;
+  float: left;
+  background: #ccc;
+}
+.content>.ad{
+  width: 100px;
+  height: 300px;
+  float: left;
+  background: #000;
+}
+
+
+.imageList{
+  outline: 1px solid green;
+  width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  
+}
+.imageList >.x > .image{
+  width: 191px;
+  height: 191px;
+  background: #000;
+  border: 50px solid red;
+  float: left;
+  margin-bottom: 10px;
+  margin-right: 12px;
+}
+.imageList > .x{
+  margin-right: -12px;
+}
+/* 弹性开始 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  ul,
+  ol {
+    list-style: none;
+  }
+  img {
+    max-width: 100%;
+  }
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: grey;
+    padding: 4px 0;
+  }
+  .logo {
+    display: flex;
+    align-items: center;
+  }
+  .logo>img {
+    height: 26px;
+    vertical-align: middle;
+  }
+  ul {
+    display: flex;
+  }
+  ul>li {
+    padding: 4px;
+  }
+  .content {
+    display: flex;
+    width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .content>aside {
+    background: #000;
+    width: 200px;
+  }
+  .content>main {
+    background: #666;
+    height: 400px;
+    flex-grow: 1;
+  }
+  .content>.ad {
+    background: #999;
+    width: 100px;
+  }
+  .imageList{
+    width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    
+  }
+  .imageList > .x{
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -6px;
+    margin-left: -6px;
+  }
+  
+  .image{
+     width: 191px;
+    height: 191px;
+    background: grey;
+    border: 1px solid red;
+    margin-right: 6px;
+    margin-left: 6px;
+    margin-bottom: 10px;
+  }
+  /* grid */
+  *{margin:0;padding:0;box-sizing: border-box;}
+
+
+.demo{
+  display: inline-grid;
+  border: 1px solid red;
+  grid-template-rows: 240px repeat(4, 120px); 
+  grid-template-columns: 250px 250px;
+  grid-template-areas: 
+    "big mid1"
+    "big mid2"
+    "sm1 mid2"
+    "sm2 mid3"
+    "sm3 mid3";
+}
+
+.demo > .image:first-child{
+  grid-area: big;
+  border: 1px solid red;
+}
+.demo > .image:nth-child(2){
+  grid-area: sm1;
+  border: 1px solid red;
+}
+.demo > .image:nth-child(3){
+  grid-area: sm2;
+  border: 1px solid red;
+}
+.demo > .image:nth-child(4){
+  grid-area: sm3;
+  border: 1px solid red;
+}
+.demo > .image:nth-child(5){
+  grid-area: mid1;
+  border: 1px solid red;
+}
+.demo > .image:nth-child(6){
+  grid-area: mid2;
+  border: 1px solid red;
+}
+.demo > .image:nth-child(7){
+  grid-area: mid3;
+  border: 1px solid red;
+}

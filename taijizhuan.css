@@ -1,0 +1,56 @@
+body {
+    background: gray;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.heibai {
+    width : 300px;
+    height: 300px;
+
+    border-radius            : 50%;
+    background-color         : #FFFFFF;
+    background-image         : linear-gradient(270deg, #FFFFFF 50%, #000000 50%);
+    background-image         : -moz-linear-gradient(270deg, #FFFFFF 50%, #000000 50%);
+    position                 : relative;
+    margin                   : 100px auto;
+    animation-duration       : 3s;
+    animation-name           : spin;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+.heibai::before {
+    width        : 30px;
+    height       : 30px;
+    content      : '';
+    position     : absolute;
+    background   : black;
+    border-radius: 50%;
+    top          : 80px;
+    left         : 0;
+    border       : 60px solid black;
+    background   : white;
+}
+
+.heibai::after {
+    width        : 30px;
+    height       : 30px;
+    content      : '';
+    position     : absolute;
+    background   : white;
+    border-radius: 50%;
+    top          : 80px;
+    right        : 0;
+    border       : 60px solid white;
+    background   : black;
+
+}

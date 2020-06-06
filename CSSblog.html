@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS 知识总结</title>
+    <link rel="stylesheet" href="CSS.blog.css">
+</head>
+
+<body>
+    <div class="p">
+        <h1>CSS 知识总结</h1>
+        <h2>目录</h2>
+        <div class="a">
+            <a href="#1">CSS文档流</a>&nbsp;&nbsp;
+            <a href="#2">CSS盒模型</a>&nbsp;&nbsp;<br>
+            <a href="#3">CSS布局</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="#31">1 float布局</a>&nbsp;&nbsp;
+            <a href="#32">2 flex布局</a>&nbsp;&nbsp;
+            <a href="#33">3 grid布局</a>&nbsp;&nbsp;<br>
+            <a href="#4">div的分层</a>&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="#5">CSS渲染原理</a>&nbsp;&nbsp;
+            <a href="#6">transfrom常用功能</a>&nbsp;&nbsp;
+            <a href="#7">CSS动画</a>&nbsp;&nbsp;
+        </div>
+    </div>
+
+    <hr>
+    <div class="p">
+
+        <h3 id="1">CSS文档流</h3>
+        <p>在文档流中，内联元素从左边开始一个接一个地显示，块元素从顶部开始向下显示并移动页面<br>
+            div是块级元素他会独占一行有多个div他会从上往下排，就是上下流动<br>
+            span是内联元素他会从左向右排，有多个span时也不会换行，直到内联元素长度大于父元素的长度才会换<br>
+            块级元素(block)：独占一行，高度(height)、宽度(width)、内补白(padding)、外部白(margin)都可以控制<br>
+            内联元素(inline)：会和相邻的内联元素同处一行， 高度(height)、宽度(width)、内补白(padding-top/bottom)、外部白(margin-top/bottom)
+            都不可变margin和padding的left和right是可变的，高度和宽度是由其文档流元素的高度和宽度决定的。<br>
+            内联块级元素(inline-block)：可以设置宽高，但是不会占一行。</p>
+    </div>
+    <hr>
+    <div class="p">
+        <h3 id="2"> CSS盒模型</h3>
+        <p> CSS有两种盒模型：
+            1 content-box 宽度为内容区（content）的宽度，不包含 padding 和 border；<br>
+            2 border-box 宽度为 内容区（content） + padding + border 的总和。</p>
+    </div>
+    <hr>
+    <div class="p">
+        <h3 id="3"> CSS布局</h3>
+        <p> 布局分类
+            固定宽度布局：一般宽度为960/1000/1024px，你再怎么宽我也不宽，你比我小了我就小一点，适用于电脑布局。<br>
+            不固定宽度布局：主要靠文档流的原理来布局，屏幕在宽我的图标也就变大一点，平铺屏幕，适应于手机布局。</p>
+
+
+        <h4 id="31"> 1 float布局</h4>
+        <p> 再给元素添加float时，元素会脱离文档流，而div的高度是由内部文档流的高度决定的，
+            都float了就没有高度了，所以要再float元素的父元素上加clearfix
+        <pre>
+      clearfix::after {
+          content: '';
+          display: block;
+          clear  : both;
+      }
+        </pre>
+
+        负margin
+        在做平均布局时右外补白会多出一块很蛋疼把元素用一个div套起来给一个负margin就可以解决，
+        就相当于向外扩展出了一段预留空间，来容纳多余的补白。
+
+        两栏布局：顶部条
+        三栏布局：内容区
+        四栏布局：导航
+        平局布局：产品展示区</p>
+        <h4 id="32">2 flex布局</h4>
+        <p> 两栏布局：顶部条
+            三栏布局：内容区
+            四栏布局：导航
+            平局布局：产品展示区</p>
+
+
+        <h4 id="33">3 grid布局</h4>
+        <p> 两栏布局：顶部条
+            三栏布局：内容区
+            四栏布局：导航
+            平局布局：产品展示区</p>
+    </div>
+    <hr>
+    <div class="p">
+        <h3 id="4"> div的分层</h3>
+        <img src="divfenceng.png" alt="div的分层图解">
+        <p> 哪些属性可以创建层叠上下文？<br>
+            z-index值为0时创建层叠上下文<br>
+            opacity（不透明度）不为1时创建<br>
+            position:fixed 创建<br>
+            transfrom 值不为none时<br>
+            filter 值不为none时<br>
+
+            opacity:0.5和background:rgba(0,0,0,0.5)的区别？<br>
+            opacity影响整个元素包括他的子元素，影响所有东西
+            background只是背景的不透明度，所以opacity要创建上下文</p>
+    </div>
+    <hr>
+    <div class="p">
+        <h3 id="5">CSS的渲染原理</h3>
+        <p> 浏览器得到一个html页面浏览器开始构建HTML树(DOM TREE),遇到CSS样式会构建CS树(CSS RULE TREE) ,
+            然后两束合并成渲染树（render tree）
+            最后，渲染树构建完成后会经过三个步骤：
+            Layout（布局）文档流、盒模型、计算大小和位置，Paint（绘制）把边框的颜色、文字的颜色、阴影等画出来，
+            Compose（合成）根据层叠关系展示画面。</p>
+    </div>
+    <hr>
+    <div class="p">
+        <h3 id="6"> transfrom常用功能</h3>
+        <p>常配合transtion过度，inline元素不支持transform需要先变成block。
+            位移：translate
+            缩放：svale
+            旋转：rotate
+            倾斜：skew
+            一般用translate(-50%，-50%)做绝对定位的居中元素
+            两次transfrom实现动画
+
+            transtion：属性名 时长 过渡方式 延迟
+            并不是所有元素都可以过度display：none到block 没法过度
+            一般写成visibility:hidden => visible</p>
+    </div>
+    <hr>
+    <div class="p">
+        <h3 id="7"> CSS动画</h3>
+        <p> animation: 时长|过渡方式|延迟|次数|方向|填充模式|是否暂停|动画名；
+            次数：infinite（无数次） 2/3/4.5
+            方向：reverse(相反)|alternate(交替)|alternate-reverse(交替反向)
+            填充模式:none|forwads(别回来)|backward(原地返回)|both
+            是否暂停:paused|running</p>
+    </div>
+
+
+<div><header class="clearfix">
+    <div class="logo">
+      <img src="https://static.xiedaimala.com/xdml/cdn/assets/white-logo-1a762b425df663fbccee710fe08d66951cea2fbc0a0350f03446ab30462e739f.png" alt="">
+    </div>
+    <ul class="clearfix nav">
+      <li>首页</li>
+      <li>课程</li>
+      <li>优惠</li>
+      <li>关于</li>
+    </ul>
+  </header>
+
+  <div class="content clearfix">
+    <aside>一行有六个字</aside>
+    <main></main>
+    <div class="ad"></div>
+
+  </div>
+
+  <div class="imageList">
+    <div class="x  clearfix">
+      <div class="image"></div>
+      <div class="image"></div>
+      <div class="image"></div>
+      <div class="image"></div>
+      <div class="image"></div>
+      <div class="image"></div>
+      <div class="image"></div>
+    </div>
+  </div>
+  浮动结束
+  <header class="header">
+    <div class="logo">
+      <img src="https://static.xiedaimala.com/xdml/cdn/assets/white-logo-1a762b425df663fbccee710fe08d66951cea2fbc0a0350f03446ab30462e739f.png" alt="">
+    </div>
+    <ul>
+      <li>首页</li>
+      <li>课程</li>
+      <li>优惠</li>
+      <li>关于</li>
+    </ul>
+  </header>
+  <div class="content">
+    <aside>一行有六个字</aside>
+    <main></main>
+    <div class="ad"></div>
+  </div>
+  
+  <div class="imageList">
+    <div class="x">
+      <div class="image"></div>
+      <div class="image"></div>
+      <div class="image"></div>
+      <div class="image"></div>
+      <div class="image"></div>
+      <div class="image"></div>
+      <div class="image"></div>
+    </div>
+  </div></div>
+    
+      弹性结束
+      <div class="demo">
+        <div class="image bigImage"></div>
+        <div class="image smallImage"></div>
+        <div class="image smallImage"></div>
+        <div class="image smallImage"></div>
+        <div class="image middleImage"></div>
+        <div class="image middleImage"></div>
+        <div class="image middleImage"></div>
+      </div>
+</body>
+
+</html>
